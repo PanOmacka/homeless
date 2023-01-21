@@ -1,0 +1,333 @@
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+
+local w = library:CreateWindow("homeless gui") -- Creates the window
+
+local b = w:CreateFolder("autofarm") -- Creates the folder(U will put here your buttons,etc)
+local c = w:CreateFolder("misc") 
+
+getgenv().AutoClick = false;
+getgenv().AutoSell = false;
+getgenv().AutoTeleport = false;
+getgenv().AutoSpin = false;
+
+b:Toggle("AutoClick",function(bool)
+    getgenv().AutoClick = bool
+    print('AutoClick is: ', bool);
+    if bool then
+        doClick();
+    end
+end)
+
+b:Toggle("AutoSell",function(bool)
+    getgenv().AutoSell = bool
+    print('AutoSell is: ', bool);
+    if bool then
+        doSell();
+    end
+end)
+
+b:Toggle("AutoTeleport",function(bool)
+    getgenv().AutoTeleport = bool
+    print('AutoTeleport is: ', bool);
+    if bool then
+        doTeleport();
+    end
+end)
+
+c:Toggle("AutoSpin",function(bool)
+    getgenv().AutoSpin = bool
+    print('AutoSpin is: ', bool);
+    if bool then
+        doSpin();
+    end
+end)
+
+
+
+
+
+
+
+
+function doClick()
+   spawn(function() 
+       while AutoClick == true do
+         local vu = game:GetService("VirtualUser")
+         vu:ClickButton1(Vector2.new(500,0))
+         wait()
+       end
+   end)
+end
+
+
+
+
+
+
+
+function doSell()
+    spawn(function() 
+         while AutoSell == true do
+          local args = {
+           [1] = {
+                        ["sock"] = {
+                            ["rarity"] = 0.3,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.6,
+                            ["img"] = "rbxassetid://5684868683",
+                            ["grade"] = 2,
+                            ["name"] = "sock"
+                        },
+                        ["spring"] = {
+                            ["rarity"] = 0.1,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.25,
+                            ["img"] = "rbxassetid://12025882634",
+                            ["grade"] = 2,
+                            ["name"] = "spring"
+                        },
+                        ["plank"] = {
+                            ["rarity"] = 0.2,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.5,
+                            ["img"] = "rbxassetid://20944363",
+                            ["grade"] = 2,
+                            ["name"] = "plank"
+                        },
+                        ["battery"] = {
+                            ["rarity"] = 0.1,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.8,
+                            ["img"] = "rbxassetid://10953918865",
+                            ["grade"] = 2,
+                            ["name"] = "battery"
+                        },
+                        ["foil"] = {
+                            ["rarity"] = 0.1,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.2,
+                            ["img"] = "rbxassetid://147887823",
+                            ["grade"] = 1,
+                            ["name"] = "foil"
+                        },
+                        ["cd"] = {
+                            ["rarity"] = 0.24,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 15,
+                            ["img"] = "rbxassetid://949160203",
+                            ["grade"] = 3,
+                            ["name"] = "cd"
+                        },
+                        ["gold"] = {
+                            ["rarity"] = 0.01,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 100,
+                            ["img"] = "rbxassetid://5684864491",
+                            ["grade"] = 3,
+                            ["name"] = "gold"
+                        },
+                        ["rotten"] = {
+                            ["rarity"] = 0.1,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.05,
+                            ["img"] = "rbxassetid://12025752984",
+                            ["grade"] = 2,
+                            ["name"] = "rotten food"
+                        },
+                        ["comic"] = {
+                            ["rarity"] = 0.2,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 250,
+                            ["img"] = "rbxassetid://12207060371",
+                            ["grade"] = 4,
+                            ["name"] = "comic book"
+                        },
+                        ["tp"] = {
+                            ["rarity"] = 0.05,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 1,
+                            ["img"] = "rbxassetid://6766522014",
+                            ["grade"] = 1,
+                            ["name"] = "toilet paper"
+                        },
+                        ["phone"] = {
+                            ["rarity"] = 0.4,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 50,
+                            ["img"] = "rbxassetid://1519603285",
+                            ["grade"] = 4,
+                            ["name"] = "phone"
+                        },
+                        ["plastic"] = {
+                            ["rarity"] = 0.25,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.04,
+                            ["img"] = "rbxassetid://5684862728",
+                            ["grade"] = 1,
+                            ["name"] = "plastic"
+                        },
+                        ["cardboard"] = {
+                            ["rarity"] = 0.15,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.1,
+                            ["img"] = "rbxassetid://13390195",
+                            ["grade"] = 1,
+                            ["name"] = "cardboard"
+                        },
+                        ["bottle"] = {
+                            ["rarity"] = 0.1,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 1,
+                            ["img"] = "rbxassetid://480355285",
+                            ["grade"] = 2,
+                            ["name"] = "bottle"
+                        },
+                        ["can"] = {
+                            ["rarity"] = 0.1,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.07,
+                            ["img"] = "rbxassetid://6874536183",
+                            ["grade"] = 1,
+                            ["name"] = "empty can"
+                        },
+                        ["credit"] = {
+                            ["rarity"] = 0.4,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 130,
+                            ["img"] = "rbxassetid://12207031909",
+                            ["grade"] = 4,
+                            ["name"] = "credit card"
+                        },
+                        ["shoe"] = {
+                            ["rarity"] = 0.4,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 7.5,
+                            ["img"] = "rbxassetid://10912056890",
+                            ["grade"] = 3,
+                            ["name"] = "shoe"
+                        },
+                        ["card"] = {
+                            ["rarity"] = 0.05,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 20,
+                            ["img"] = "rbxassetid://38154272",
+                            ["grade"] = 3,
+                            ["name"] = "trading card"
+                        },
+                        ["cloth"] = {
+                            ["rarity"] = 0.1,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.15,
+                            ["img"] = "rbxassetid://9712134761",
+                            ["grade"] = 1,
+                            ["name"] = "torn cloth"
+                        },
+                        ["paper"] = {
+                            ["rarity"] = 0.25,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.02,
+                            ["img"] = "rbxassetid://6835358763",
+                            ["grade"] = 1,
+                            ["name"] = "paper"
+                        },
+                        ["electronics"] = {
+                            ["rarity"] = 0.3,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 9.6,
+                            ["img"] = "rbxassetid://547416328",
+                            ["grade"] = 3,
+                            ["name"] = "electronics"
+                        },
+                        ["nail"] = {
+                            ["rarity"] = 0.1,
+                            ["category"] = "trash",
+                            ["itemType"] = "trash",
+                            ["weight"] = 1,
+                            ["value"] = 0.3,
+                            ["img"] = "rbxassetid://11362540073",
+                            ["grade"] = 2,
+                            ["name"] = "nail"
+                        }
+           },
+           [2] = 1000000
+           }
+            game:GetService("ReplicatedStorage").SellTrash:FireServer(unpack(args))
+            wait()
+        end
+    end)
+end
+
+
+
+
+
+
+function doTeleport()
+   spawn(function()
+       while AutoTeleport == true do
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(125.799393, 9.63043118, -244.494095, -0.0411263183, 3.11846158e-08, -0.999153972, 1.05797247e-08, 1, 3.07755457e-08, 0.999153972, -9.30508826e-09, -0.0411263183)
+         wait(10) 
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(142.440994, 4.55913019, -271.86319, -0.142106548, -9.4200864e-08, -0.989851356, 3.36154606e-08, 1, -9.99926257e-08, 0.989851356, -4.7483919e-08, -0.142106548)
+         wait(10)
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(178.449051, 6.61554003, -233.936722, -0.192105472, -3.59399421e-09, -0.981374264, -2.83245587e-08, 1, 1.88236893e-09, 0.981374264, 2.81586061e-08, -0.192105472)
+         wait(10)
+       end
+   end)
+end
+
+
+
+function doSpin()
+  spawn(function()
+       while AutoSpin == true do
+          local args = {
+           [1] = 1
+           }
+    
+           game:GetService("ReplicatedStorage").SlotsEvents.SpinEvent:FireServer(unpack(args))
+           wait()
+        end
+    end)     
+end
