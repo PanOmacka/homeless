@@ -10,6 +10,8 @@ getgenv().AutoSell = false;
 getgenv().AutoTeleport = false;
 getgenv().AutoSpin = false;
 getgenv().AutoUpgrade = false;
+getgenv().AutoLottery = false;
+
 
 b:Toggle("AutoClick",function(bool)
     getgenv().AutoClick = bool
@@ -40,6 +42,14 @@ b:Toggle("AutoUpgrade",function(bool)
     print('AutoUpgrade is: ', bool);
     if bool then
         doUpgrade();
+    end
+end)
+
+c:Toggle("AutoLottery",function(bool)
+    getgenv().AutoLottery = bool
+    print('AutoLottery is: ', bool);
+    if bool then
+        doLottery();
     end
 end)
 
@@ -351,6 +361,23 @@ function doUpgrade()
            local Anvil = game:GetService("Workspace").Anvil;
 
             for _, ClickDetector in pairs(Anvil:GetDescendants()) do
+            if (ClickDetector:IsA("ClickDetector")) then
+                fireclickdetector(ClickDetector, 1);
+            end;
+            end;
+           wait(60)
+        end
+    end)     
+end
+
+
+
+function doLottery()
+  spawn(function()
+        while AutoLottery == true do
+           local lottery = game:GetService("Workspace").lottery;
+
+            for _, ClickDetector in pairs(lottery:GetDescendants()) do
             if (ClickDetector:IsA("ClickDetector")) then
                 fireclickdetector(ClickDetector, 1);
             end;
