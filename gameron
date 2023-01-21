@@ -9,6 +9,7 @@ getgenv().AutoClick = false;
 getgenv().AutoSell = false;
 getgenv().AutoTeleport = false;
 getgenv().AutoSpin = false;
+getgenv().AutoUpgrade = false;
 
 b:Toggle("AutoClick",function(bool)
     getgenv().AutoClick = bool
@@ -31,6 +32,14 @@ b:Toggle("AutoTeleport",function(bool)
     print('AutoTeleport is: ', bool);
     if bool then
         doTeleport();
+    end
+end)
+
+b:Toggle("AutoUpgrade",function(bool)
+    getgenv().AutoUpgrade = bool
+    print('AutoUpgrade is: ', bool);
+    if bool then
+        doUpgrade();
     end
 end)
 
@@ -328,6 +337,25 @@ function doSpin()
     
            game:GetService("ReplicatedStorage").SlotsEvents.SpinEvent:FireServer(unpack(args))
            wait()
+        end
+    end)     
+end
+
+
+
+
+
+function doUpgrade()
+  spawn(function()
+        while AutoUpgrade == true do
+           local Anvil = game:GetService("Workspace").Anvil;
+
+            for _, ClickDetector in pairs(Anvil:GetDescendants()) do
+            if (ClickDetector:IsA("ClickDetector")) then
+                fireclickdetector(ClickDetector, 1);
+            end;
+            end;
+           wait(60)
         end
     end)     
 end
