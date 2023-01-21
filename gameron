@@ -382,7 +382,7 @@ function doLottery()
                 fireclickdetector(ClickDetector, 1);
             end;
             end;
-           wait(60)
+           wait()
         end
     end)     
 end
