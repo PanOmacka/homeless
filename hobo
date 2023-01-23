@@ -332,6 +332,8 @@ function doTeleport()
          wait(10)
          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(178.449051, 6.61554003, -233.936722, -0.192105472, -3.59399421e-09, -0.981374264, -2.83245587e-08, 1, 1.88236893e-09, 0.981374264, 2.81586061e-08, -0.192105472)
          wait(10)
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(66.9384689, 7.25033569, -81.933548, 0.141908213, 2.59982773e-08, -0.989879847, -2.5292417e-08, 1, 2.26381793e-08, 0.989879847, 2.18239098e-08, 0.141908213)
+         wait(1)
        end
    end)
 end
